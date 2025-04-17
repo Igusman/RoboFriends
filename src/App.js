@@ -29,14 +29,17 @@ class App extends React.Component {
         const filterRobot = this.state.robots.filter(robots => {
             return robots.name.toLowerCase().includes(this.state.searchfield.toLowerCase())
         })
-
-        return (
-            <div className="tc">
-                <h1 className="f2">RoboFriends</h1>
-                <SearchBox searchChange={this.onSearchChange} />
-                <CardList robots={filterRobot} />
-            </div>
-        )
+        if (this.state.robots.length === 0) {
+            return <h1>LOADING</h1>
+        } else {
+            return (
+                <div className="tc">
+                    <h1 className="f2">RoboFriends</h1>
+                    <SearchBox searchChange={this.onSearchChange} />
+                    <CardList robots={filterRobot} />
+                </div>
+            )
+        }
     }
 }
 
