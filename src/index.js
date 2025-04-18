@@ -1,7 +1,7 @@
 import React, { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App.js';
+import App from './containers/App';
 import 'tachyons' // css
 import reportWebVitals from './reportWebVitals';
 
